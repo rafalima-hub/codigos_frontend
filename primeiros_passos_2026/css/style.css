@@ -15,17 +15,34 @@ Referências: https://fontawesome.com
 */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css');
 
-/* Reset Geral */
+:root {
+    --wrap-max-width: 1080px;
+    --default-links: steelblue;
+    --default-links-hover: orangered;
+    --body-background-image: url("../img/bg01.jpg");
+    --body-background-color: rgb(116, 59, 90);
+    --header-background-color: rgb(255, 174, 235);
+    --header-logo-front: Arial, helvetica, sans-serif;
+    --header-title-stroke: white;
+    --nav-footer-background-color: black;
+    --article-section-background-color: white;
+    --aside-background-color: #eee;
+    --top-search-border: 3px dotted white;
+    --nav-menu-color: white;
+    --nav-menu-hover-color: white;
+    --nav-menu-hover-bg-color: rgba(255, 255, 255, .4);
+}
 
+/* Reset Geral */
 * {
-   box-sizing: border-box;
-   outline: none;
+    box-sizing: border-box;
+    outline: none;
 }
 
 /* Elementos raiz */
 html,
-body{
-    /* Reset nas margens e enchientos */
+body {
+    /* Reset nas margens e enchimentos */
     position: relative;
     /* Permite usar height nos elementos div */
     margin: 0;
@@ -33,5 +50,218 @@ body{
     height: 100%;
 
     /* Fonte padrão e tamanho */
-    font-family: "Roboto", Arial, 
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    /*
+    A linha acima define a unidade de medida "rem" onde:
+    1rem = 16px
+    .5rem ou 0.5rem = 8px
+    .25rem ou 0.25rem = 4px
+    2rem = 32px
+    3rem = 48px
+    */
+}
+
+/* 
+Reset dos títulos e parágrafos
+trocando margin por padding
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: .5rem;
+}
+
+/* Padroniza links */
+a {
+    color: var(--default-links);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--default-links-hover);
+}
+
+/* Tela de fundo */
+body {
+    /* background: linear-gradient(to right, blue, red, cyan); */
+    background-image: var(--body-background-image);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* Imagem responsiva */
+.azul {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Elemento Wrap */
+#wrap {
+    max-width: var(--wrap-max-width);
+    margin: auto;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho da página */
+
+/* header é filho direto de #wrap (>)
+parent > direct-child */
+#wrap>header {
+    background-color: var(--header-background-color);
+    border-radius: .5rem;
+    margin: .5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#wrap>header img {
+    display: block;
+    width: 90px;
+    border-radius: 50%;
+    margin: .5rem;
+}
+
+/* Referências: https://www.w3schools.com/css/css3_flexbox.asp */
+.logotitle {
+    display: flex;
+    align-items: center;
+}
+
+.logotitle h1 {
+    font-family: var(--header-logo-front);
+    font-weight: bold;
+    /* Experimental: adicionar uma borda ao texto */
+    -webkit-text-stroke: .75px var(--header-title-stroke);
+}
+
+/* Formulário de pesquisa */
+.header-search {
+    padding: 1rem;
+    display: flex;
+    border: var(--top-search-border)
+}
+
+/* Filhos do formulário */
+.header-search input,
+.header-search button {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+}
+
+/* Só com o campo de pesquisa */
+.header-search input {
+    padding: .5rem 1rem;
+    flex-grow: 1;
+    border-radius: .3rem 0 0 .3rem;
+}
+
+.header-search button {
+    padding: .5rem;
+    border-radius: 0 .3rem .3rem 0;
+    cursor: pointer;
+}
+
+/* Menu principal */
+
+#wrap>nav {
+    background-color: var(--nav-footer-background-color);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: .5rem;
+    margin-top: 0;
+    border-radius: .5rem;
+    border: 1px solid black;
+}
+
+#wrap>nav a:first-child {
+    margin-right: auto;
+    border-radius: .4rem 0 0 .4rem;
+}
+
+#wrap>nav a:last-child {
+    border-radius: 0 .4rem .4rem 0;
+}
+
+#wrap>nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: .5rem;
+    color: var(--nav-menu-color);
+    transition: .2s;
+}
+
+#wrap>nav a:hover {
+    color: var(--nav-menu-hover-color);
+    background-color: var(--nav-menu-hover-bg-color)
+}
+
+#wrap>nav a i {
+    font-size: 1.8rem;
+    padding-bottom: .25rem;
+}
+
+/* Main e conteúdo principal */
+
+#wrap>main {
+}
+
+#wrap> main section,
+ #wrap>main article{
+    background-color: var(--article-section-background-color);
+    margin: .5rem;
+    margin-top: 0;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    line-height: 1.5;
+}
+
+#wrap>main aside {
+    background-color: var(--aside-background-color);
+    padding: 1rem;
+}
+
+
+/* Media queries para telas de 640px ou mais */
+@media screen and (min-width: 640px) {
+
+    /* Cabeçalho <header> responsivo */
+    #wrap>header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Formulário de pesquisa responsivo */
+    .header-search {
+        border: none;
+    }
+
+    /*Itens do menu principal responsivos */
+    #wrap>nav a {
+        flex-direction: row;
+        padding: .65rem 1rem;
+    }
+
+    /* Ícones do menu principal */
+    #wrap>nav a i {
+        font-size: 1.2rem;
+        padding: .25rem;
+    }
+
 }
