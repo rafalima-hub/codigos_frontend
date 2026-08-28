@@ -9,4 +9,4 @@ const myLogo = document.getElementsById('myLogo')
 // console.log(myLogo)
 myLogo.addEventListener("clikc", function () {
     alert("Por que clicou aqui?")
-})
+});
