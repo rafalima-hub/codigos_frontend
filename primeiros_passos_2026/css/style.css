@@ -19,7 +19,7 @@ Referências: https://fontawesome.com
     --wrap-max-width: 1080px;
     --default-links: steelblue;
     --default-links-hover: orangered;
-    --body-background-image: url("../img/bg01.jpg");
+    --body-background-image: url("../img/bg01.png");
     --body-background-color: rgb(116, 59, 90);
     --header-background-color: rgba(255, 174, 235, .8);
     --header-logo-front: Arial, helvetica, sans-serif;
@@ -291,6 +291,72 @@ parent > direct-child */
 #wrap>footer a:last-child {
     border-radius: 0 .4rem .4rem 0;
 }
+
+/*************
+* Aviso de Cookies
+AVISO DE COOKIES
+  =============== */
+
+  .cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 20px;
+
+    background-color: #ffffff;
+    color: #222222;
+
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+
+    z-index: 9999;
+  }
+
+  .cookie-text {
+    flex: 1;
+  }
+
+  .cookie-text strong {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .cookie-text p {
+    margin: 0;
+  }
+
+  #cookie-accept {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #004953;
+    color: white;
+    cursor: pointer;
+  }
+
+  #cookie-accept:hover {
+    opacity: 085;
+  }
+
+  /* Responsividade */
+
+  @media (max-width: 600px) {
+    .cookie-banner {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #cookie-accept {
+        width: 100%;
+    }
+  }
 
 /* Media queries para telas de 640px ou mais */
 @media screen and (min-width: 640px) {
