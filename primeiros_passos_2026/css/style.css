@@ -19,15 +19,15 @@ Referências: https://fontawesome.com
     --wrap-max-width: 1080px;
     --default-links: steelblue;
     --default-links-hover: orangered;
-    --body-background-image: url("../img/bg01.png");
-    --body-background-color: rgb(116, 59, 90);
-    --header-background-color: rgba(255, 174, 235, .8);
+    --body-background-image: url("../img/bg01.jpg");
+    --body-background-color: rgb(134, 86, 46);
+    --header-background-color: rgba(243, 163, 196, 0.8);
     --header-logo-front: Arial, helvetica, sans-serif;
     --header-title-stroke: white;
-    --nav-footer-background-color: rgb(180, 111, 159);
+    --nav-footer-background-color: rgb(214, 127, 163);
     --article-section-background-color: white;
     --aside-background-color: rgba(238, 238, 238, .8);
-    --top-search-border: 3px dotted white;
+    --top-search-border: 3px dotted rgb(214, 127, 163);
     --nav-menu-color: white;
     --nav-menu-hover-color: white;
     --nav-menu-hover-bg-color: rgba(255, 255, 255, .4);
@@ -236,6 +236,11 @@ parent > direct-child */
     background-color: var(--article-section-background-color);
     margin-top: 0;
     border-radius: .5rem;
+}
+
+.imagem-centralizada {
+    display: flex;
+    justify-content: center;
 }
 
 /* Elementos com o contúdo principal */
